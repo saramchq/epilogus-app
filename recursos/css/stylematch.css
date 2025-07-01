@@ -1,0 +1,122 @@
+body {
+margin: 0;
+padding: 0;
+background-color: #0D1B2A;
+color: white;
+font-family: sans-serif;
+text-align: center;
+}
+
+/*nav bar*/
+.navbar {
+background-color: #1E2A38;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 30px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nav-logo {
+height: 40px;
+width: auto;
+}
+
+.nav-right {
+display: flex;
+gap: 15px;
+}
+
+.nav-right button {
+padding: 8px 16px;
+border: none;
+border-radius: 6px;
+background-color: #415A77;
+color: white;
+font-size: 1rem;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+.nav-right button:hover {
+background-color: #778DA9;
+}
+
+
+.titulo {
+margin-top: 30px;
+}
+
+.container {
+display: flex;
+justify-content: center;
+gap: 30px;
+padding: 40px;
+flex-wrap: wrap;
+}
+
+.card {
+background-color: #1E2A38;
+border-radius: 10px;
+padding: 20px;
+width: 250px;
+color: white;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+width: 100%;
+height: auto;
+border-radius: 6px;
+margin-bottom: 10px;
+}
+
+.card h1 {
+font-size: 1.2rem;
+margin: 10px 0;
+}
+
+.card p {
+font-size: 0.95rem;
+margin: 10px 0;
+}
+
+.buttons button {
+margin: 5px;
+padding: 8px 16px;
+border: none;
+border-radius: 6px;
+background-color: #415A77;
+color: white;
+cursor: pointer;
+}
+
+.buttons button:hover {
+background-color: #778DA9;
+}
+
+.links a {
+display: inline-block;
+margin-top: 10px;
+font-size: 0.9rem;
+color: #A0C4FF;
+text-decoration: none;
+}
+
+/* Animação dos botoes dos cards */
+@keyframes fadeOutDown {
+from {
+    opacity: 1;
+    transform: translateY(0);
+}
+to {
+    opacity: 0;
+    transform: translateY(50px);
+}
+}
+
+.card.fade-out {
+animation: fadeOutDown 0.5s ease forwards;
+}
+
+
