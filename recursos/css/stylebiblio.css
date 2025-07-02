@@ -12,12 +12,12 @@ body {
 .navbar {
   background-color: #1E2A38;
   display: flex;
+  align-items: center;
   padding: 20px 30px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   gap: 20px;
 }
 
-/* Logo fica à esquerda */
 .nav-left {
   flex-shrink: 0;
 }
@@ -29,16 +29,16 @@ body {
 
 .nav-search {
   flex-grow: 1;
-  max-width: 600px;
+  max-width: 450px;
   display: flex;
-  align-items: right;
+  align-items: center;
   gap: 8px;
 }
 
 .nav-search input {
   padding: 6px 12px;
   border-radius: 6px;
-  border: 1px solid #415A77; 
+  border: 1px solid #415A77;
   font-size: 1rem;
   outline: none;
   width: 100%; /* para ocupar todo o espaço disponível */
@@ -92,95 +92,61 @@ body {
   background-color: #778DA9;
 }
 
-/* Container principal */
-.titulo {
-  margin-top: 30px;
+/* Container para a tabela */
+.table-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px 30px;
+  background-color: rgba(30, 42, 56, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 40px;
-  flex-wrap: wrap;
-  animation: fadeIn 1s ease-in-out;
-}
-
-/* Cartões */
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  width: 350px;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-.card img {
+/* Tabela*/
+#likedBooksTable {
   width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-.card h1 {
-  font-size: 1.2rem;
-  margin: 10px 0;
-}
-
-.card p {
-  font-size: 0.95rem;
-  margin: 10px 0;
-}
-
-.buttons button {
-  margin: 5px;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  background-color: #415A77;
+  border-collapse: collapse;
   color: white;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.buttons button:hover {
-  background-color: #778DA9;
+#likedBooksTable thead tr {
+  background-color: #2B3A4B;
 }
 
-.links a {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 0.9rem;
+#likedBooksTable th,
+#likedBooksTable td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #415A77;
+  text-align: left;
+}
+
+#likedBooksTable th {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+#likedBooksTable td a {
   color: #A0C4FF;
   text-decoration: none;
+  font-weight: 500;
 }
 
-/* Animação dos botões dos cards */
-@keyframes fadeOutDown {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(50px);
-  }
+#likedBooksTable td a:hover {
+  text-decoration: underline;
+  color: #78A3FF;
 }
 
-/* Animação dos cards a desaparecer */
-.card.fade-out {
-  animation: fadeOutDown 0.5s ease forwards;
-}
-
-/* Animação dos cards aparecer */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Mensagem vazio */
+.empty-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 40px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
 }
