@@ -9,6 +9,7 @@ body {
 }
 
 /* Navbar */
+/* Navbar */
 .navbar {
   background-color: #1E2A38;
   display: flex;
@@ -17,9 +18,12 @@ body {
   gap: 20px;
 }
 
-/* Logo fica à esquerda */
+/* Logo à esquerda com espaço igual */
 .nav-left {
-  flex-shrink: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* alinha a logo à esquerda */
 }
 
 .nav-logo {
@@ -27,11 +31,12 @@ body {
   width: auto;
 }
 
+/* Barra de pesquisa ao centro com espaço igual */
 .nav-search {
-  flex-grow: 1;
-  max-width: 600px;
+  flex: 1;
   display: flex;
-  align-items: right;
+  align-items: center;
+  justify-content: center; /* centraliza o input e botão */
   gap: 8px;
 }
 
@@ -41,7 +46,7 @@ body {
   border: 1px solid #415A77; 
   font-size: 1rem;
   outline: none;
-  width: 100%; /* para ocupar todo o espaço disponível */
+  width: 100%; /* ocupa o espaço disponível dentro do seu container */
   background-color: white;
   color: #0D1B2A;
   transition: border-color 0.3s ease;
@@ -70,11 +75,13 @@ body {
   background-color: #778DA9;
 }
 
-/* Botões alinhados à direita */
+/* Botões à direita com espaço igual */
 .nav-right {
+  flex: 1;
   display: flex;
+  justify-content: flex-end; /* alinha os botões à direita */
+  align-items: center;
   gap: 15px;
-  flex-shrink: 0;
 }
 
 .nav-right button {
@@ -92,10 +99,17 @@ body {
   background-color: #778DA9;
 }
 
-/* Container principal */
-.titulo {
-  margin-top: 30px;
+
+.quote {
+font-style: italic;
+color: #E0E1DD;
+font-size: 2.5rem;
+margin-top: 40px;
+margin-bottom: 40;
+text-align: center;
+max-width: 100%;
 }
+
 
 .container {
   display: flex;
