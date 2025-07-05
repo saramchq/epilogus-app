@@ -1,8 +1,7 @@
 body {
 margin: 0;
-font-family: sans-serif;
 background-image: url('/05week/epilogus/recursos/imgs/background.png');
-font-family: 'Parkinsans', Arial, sans-serif;
+font-family: 'Roboto', sans-serif;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -15,16 +14,16 @@ width: 400px;
 height: 20px;
 background-color: #1E2A38; 
 border-radius: 10px;
-overflow: hidden;
+overflow: hidden; /* esconde o que passar do limite */
 box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 margin-top: 20px;
 }
 
-.epilogus-progress-bar {
+.epilogus-progress-bar { /*Quando muda de width: 0% para width: 100% ela parece estar a carregar*/
 height: 100%;
 width: 0%;
-background: linear-gradient(90deg, #6CB4EE, #4F8EC6); 
-transition: width 0.4s ease-in-out;
+background: linear-gradient(90deg, #6CB4EE, #4F8EC6);  /* cor com gradiente animado */
+transition: width 0.4s ease-in-out; /* animaçao qnd a largura muda*/
 border-radius: 10px;
 }
 

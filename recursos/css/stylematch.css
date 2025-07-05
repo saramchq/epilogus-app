@@ -3,12 +3,11 @@ body {
   padding: 0;
   background-color: #0D1B2A;
   color: white;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   background-image: url('/05week/epilogus/recursos/imgs/background.png');
 }
 
-/* Navbar */
 /* Navbar */
 .navbar {
   background-color: #1E2A38;
@@ -18,9 +17,9 @@ body {
   gap: 20px;
 }
 
-/* Logo à esquerda com espaço igual */
+/* Logo à esquerda*/
 .nav-left {
-  flex: 1;
+  flex: 1; /*ocupa 1/3 da navbar, faz o grow, shrink e basic ao msm tempo e os elementos ficam ocupam o msm espaço*/
   display: flex;
   align-items: center;
   justify-content: flex-start; /* alinha a logo à esquerda */
@@ -31,12 +30,12 @@ body {
   width: auto;
 }
 
-/* Barra de pesquisa ao centro com espaço igual */
+/* Barra de pesquisa */
 .nav-search {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center; /* centraliza o input e botão */
+  justify-content: center;
   gap: 8px;
 }
 
@@ -46,7 +45,7 @@ body {
   border: 1px solid #415A77; 
   font-size: 1rem;
   outline: none;
-  width: 100%; /* ocupa o espaço disponível dentro do seu container */
+  width: 100%;
   background-color: white;
   color: #0D1B2A;
   transition: border-color 0.3s ease;
@@ -105,7 +104,7 @@ font-style: italic;
 color: #E0E1DD;
 font-size: 2.5rem;
 margin-top: 40px;
-margin-bottom: 40;
+margin-bottom: 40px;
 text-align: center;
 max-width: 100%;
 }

@@ -1,37 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Epilogus - Os livros sabem mais de nós do que nós deles.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/05week/epilogus/recursos/css/stylematch.css">
-</head>
-<body>
-    <nav class="navbar">
-  <div class="nav-left">
-    <img src="/05week/epilogus/recursos/imgs/logo.png" alt="Logo Epilogus" class="nav-logo">
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Epilogus - Os livros sabem mais de nós do que nós deles.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  <!-- Google Fonts: Roboto -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/05week/epilogus/recursos/css/stylematch.css">
+  </head>
+  <body>
+    <nav class="navbar"> <!-- Barra de navegação com logo, pesquisa e botões -->
+      <div class="nav-left">
+        <a href="index.html">
+          <img
+            src="/05week/epilogus/recursos/imgs/logo.png"
+            alt="Logo Epilogus"
+            class="nav-logo"
+          />
+        </a>
+      </div>
 
-  <div class="nav-search">
-    <input type="text" id="searchInput" placeholder="Pesquisar livros...">
-    <button id="searchBtn">🔎</button>
-  </div>
+      <div class="nav-search">
+        <input type="text" id="searchInput" placeholder="Pesquisar livros..." />
+        <button id="searchBtn">🔎</button>
+      </div>
 
-   <div class="nav-right">
-    <button onclick="window.location.href='match.html'">Escolhe e pesquisa</button>
-    <button onclick="window.location.href='biblioteca.html'">Biblioteca</button>
-  </div>
-</nav>
+      <div class="nav-right">
+        <button onclick="window.location.href='match.html'">
+          Escolhe e pesquisa
+        </button>
+        <button onclick="window.location.href='biblioteca.html'">
+          Biblioteca
+        </button>
+      </div>
+    </nav>
 
-   <!--<h1 class="titulo">Escolhe o teu próximo livro</h1>-->
-   <p class="quote"> Escolhe o teu próximo livro</p>
-  <div class="container" id="books-container">
-  </div>
-  <script src="/05week/epilogus/recursos/js/script.js"></script>
-</body>
+    <p class="quote">Escolhe o teu próximo livro</p>
+    <div class="container" id="books-container"></div> <!-- Onde os livros vão aparecer dinamicamente -->
+    <script src="/05week/epilogus/recursos/js/match.js"></script>
+  </body>
 </html>

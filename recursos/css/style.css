@@ -1,33 +1,31 @@
 body {
-margin: 0;
-font-family: sans-serif;
-background-image: url('/05week/epilogus/recursos/imgs/background.png');
-font-family: 'Parkinsans', Arial, sans-serif;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
+  margin: 0;/*remove as margens do browser*/
+  font-family: 'Roboto', sans-serif;
+  background-image: url('/05week/epilogus/recursos/imgs/background.png');
+  display: flex; 
+  justify-content: center; /* centraliza horizontalmente*/
+  align-items: center; /*centraliza verticalmente*/
+  height: 100vh;  /* Define a altura da página como 100% da altura da janela */
 }
 
+/*container dos elementos*/
 .container {
-display: flex;
-flex-direction: column;
-align-items: center;
-animation: fadeIn 1s ease-in-out;
+display: flex; /*organiza os filhos*/
+flex-direction: column; /*elementos na vertical*/
+align-items: center; /* centraliza horizontalmente*/
+animation: fadeIn 1s ease-in-out; /* animaçao de entrada*/
 }
 
+/*logo*/
 .logo {
-width: 600px;  
-max-width: 90vw;
-height: auto;
+width: 600px;
+max-width: 90vw; /*largura max relativa ao ecrã*/
+height: auto; /* mantém a proporçao da img*/
 margin-bottom: 20px;
 }
 
-.button-group {
-display: flex;
-gap: 20px;
-}
 
+/*botão*/
 button {
 padding: 10px 20px;
 font-size: 1rem;
@@ -36,15 +34,19 @@ border-radius: 8px;
 background-color: #415A77;
 color: white;
 cursor: pointer;
-transition: background 0.3s ease;
+transition: background 0.3s ease; /*animação p mudar a cor*/
 }
 
+.button-group {
+display: flex; /*organiza os botoes lado a lado*/
+gap: 20px;
+}
 
 button:hover {
 background-color: #778DA9;
 }
 
-
+/*frase quote*/
 .quote {
 font-style: italic;
 color: #E0E1DD;
@@ -55,15 +57,14 @@ text-align: center;
 max-width: 80%;
 }
 
-
-
+/* animação do começo*/
 @keyframes fadeIn {
 from {
 opacity: 0;
-transform: translateY(20px);
+transform: translateY(20px); 
 }
 to {
 opacity: 1;
 transform: translateY(0);
-}
+} 
 }

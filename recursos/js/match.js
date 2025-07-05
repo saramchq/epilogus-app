@@ -56,7 +56,6 @@ function addCard(cardPosition) {
   if (currentIndex >= books.length) return; //Se o valor de currentIndex for maior ou igual ao número total de livros entao ja nao ha mais livros disponiveis por isso a função pára com o return
   const book = books[currentIndex]; //Vai buscar o livro na posição atual (currentIndex) dentro do array books[] e guardá-lo na variável book 
   const card = document.createElement("div"); //cria uma div para o card
-  //card.className = "card fade-in"; // animação dos cards a aparecer
   card.className = "card"; // com a class card
   card.dataset.position = cardPosition; // ajuda a identificar a posiçao do card no layout qnd clicamos em gostar ou descartar
 

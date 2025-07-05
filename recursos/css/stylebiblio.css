@@ -3,7 +3,7 @@ body {
   padding: 0;
   background-color: #0D1B2A;
   color: white;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   background-image: url('/05week/epilogus/recursos/imgs/background.png');
 }
@@ -19,7 +19,7 @@ body {
 }
 
 .nav-left {
-  flex-shrink: 0;
+  flex-shrink: 0;/* impede que a logo encolha mesmo que o espaço diminua */
 }
 
 .nav-logo {
@@ -27,54 +27,11 @@ body {
   width: auto;
 }
 
-.nav-search {
-  flex-grow: 1;
-  max-width: 450px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.nav-search input {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: 1px solid #415A77;
-  font-size: 1rem;
-  outline: none;
-  width: 100%; /* para ocupar todo o espaço disponível */
-  background-color: white;
-  color: #0D1B2A;
-  transition: border-color 0.3s ease;
-}
-
-.nav-search input::placeholder {
-  color: #a0aec0; 
-}
-
-.nav-search input:focus {
-  border-color: #778DA9;
-}
-
-.nav-search button {
-  padding: 8px 16px;
-  background-color: #415A77;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.nav-search button:hover {
-  background-color: #778DA9;
-}
-
 /* Botões alinhados à direita */
 .nav-right {
-  display: flex;
+  display: flex;/* usa flexbox para alinhar os botões lado a lado */
   gap: 15px;
-  flex-shrink: 0;
+  flex-shrink: 0; /* impede que a area encolha */
 }
 
 .nav-right button {
@@ -85,7 +42,7 @@ body {
   color: white;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease; /* transição suave na cor ao passar o rato */
 }
 
 .nav-right button:hover {
@@ -94,9 +51,9 @@ body {
 
 /* Container para a tabela */
 .table-container {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 20px 30px;
+  max-width: 900px;/* largura máxima do container da tabela */
+  margin: 50px auto; /* centraliza horizontalmente com espaço vertical */
+  padding: 20px 30px;  /* espaço interno */
   background-color: rgba(30, 42, 56, 0.9);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -104,10 +61,10 @@ body {
 
 /* Tabela*/
 #likedBooksTable {
-  width: 100%;
-  border-collapse: collapse;
+  width: 100%;/* ocupa 100% do espaço do container */
+  border-collapse: collapse; /* retira espaço entre as células da tabela */
   color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 #likedBooksTable thead tr {
@@ -116,7 +73,7 @@ body {
 
 #likedBooksTable th,
 #likedBooksTable td {
-  padding: 12px 15px;
+  padding: 12px 20px;/* espaço dentro das células */
   border-bottom: 1px solid #415A77;
   text-align: left;
 }
@@ -137,16 +94,51 @@ body {
   color: #78A3FF;
 }
 
-/* Mensagem vazio */
-.empty-card {
-  background: rgba(255, 255, 255, 0.1);
+
+/* Fundo da pagina escurece quando abre o modal */
+.modal-backdrop.show {
+  opacity: 0.6;
+}
+
+/* Caixa do modal */
+.modal-content {
   border-radius: 12px;
-  padding: 40px;
-  color: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background-color: #fefefe;
+  color: #1e1e1e;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Título do modal */
+.modal-title {
+  font-weight: 600;
   font-size: 1.2rem;
+}
+
+/* Botão cancelar*/
+.btn-secondary {
+  background-color: #bdc3c7;
+  border: none;
+  color: #fff;
   font-weight: 500;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  max-width: 600px;
-  margin: 50px auto;
-  text-align: center;
+}
+
+.btn-secondary:hover {
+  background-color: #95a5a6;
+}
+
+/*botão remover*/
+.btn-danger {
+  background-color: #C0392B;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn-danger:hover {
+  background-color: #E74C3C;
 }

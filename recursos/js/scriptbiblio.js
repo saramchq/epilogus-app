@@ -1,34 +1,47 @@
-const container = document.getElementById("library-container");
+function renderLikedBooksTable() {
+  const likedBooks = JSON.parse(localStorage.getItem('likedBooks')) || [];
+  const tbody = document.getElementById('likedBooksTableBody');
 
-// Pega os livros guardados no localStorage
-let likedBooks = JSON.parse(localStorage.getItem("likedBooks")) || [];
+  tbody.innerHTML = '';
 
-function renderLibrary() {
-  container.innerHTML = "";
+  if (likedBooks.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="4" style="text-align:center;">Não tens livros guardados ainda.</td></tr>`;
+    return;
+  }
 
- if (likedBooks.length === 0) {
-  container.innerHTML = `
-    <div class="empty-card">
-      <p>Não tens livros guardados ainda.</p>
-    </div>
-  `;
-  return;
-}
+  likedBooks.forEach((book, index) => {
+    const tr = document.createElement('tr');
 
-
-  likedBooks.forEach(book => {
-    const div = document.createElement("div");
-    div.className = "grid-item";
-
-    div.innerHTML = `
-      <img src="${book.img}" alt="Capa do livro">
-      <h2>${book.title}</h2>
-      <p>${book.description.substring(0, 150)}...</p>
-      <a href="${book.url}" target="_blank">Ver mais</a>
+    tr.innerHTML = `
+      <td>${book.title}</td>
+      <td>${book.description?.substring(0, 150) || "Sem descrição"}...</td>
+      <td><a href="${book.url}" target="_blank">Ver mais</a></td>
+      <td><button onclick="openConfirmModal(${index})" class="btn btn-danger btn-sm">Remover</button></td>
     `;
 
-    container.appendChild(div);
+    tbody.appendChild(tr);
   });
 }
 
-renderLibrary();
+
+window.onload = renderLikedBooksTable;
+
+let bookIndexToRemove = null;
+
+function openConfirmModal(index) {
+  bookIndexToRemove = index;
+  const modal = new bootstrap.Modal(document.getElementById('confirmRemoveModal'));
+  modal.show();
+}
+
+document.getElementById('confirmRemoveBtn').addEventListener('click', () => {
+  if (bookIndexToRemove !== null) {
+    removeLikedBook(bookIndexToRemove);
+    bookIndexToRemove = null;
+
+    // Fecha o modal manualmente
+    const modalElement = document.getElementById('confirmRemoveModal');
+    const modalInstance = bootstrap.Modal.getInstance(modalElement);
+    modalInstance.hide();
+  }
+});
